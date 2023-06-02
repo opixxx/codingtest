@@ -1,6 +1,4 @@
-
-
-
+package Array;
 import java.util.Scanner;
 
 public class _02_06 {
