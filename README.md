@@ -6,3 +6,5 @@
 3. Two pointer, Sliding Window
 4. Stack, Queue
 5. Sorting, Searching
+6. Recurisve
+7. DFS,BFS
