@@ -15,7 +15,7 @@ public class _08_09 {
         } else {
             for (int i = s; i <= n; i++) {
                 ans[L] = i;
-                DFS(L + 1, s + i);
+                DFS(L + 1, i + 1);
 
             }
         }
