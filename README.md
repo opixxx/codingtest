@@ -4,7 +4,9 @@
 1. String
 2. Array
 3. Two pointer, Sliding Window
-4. Stack, Queue
-5. Sorting, Searching
-6. Recurisve
-7. DFS,BFS
+4. Hash, TreeSet
+5. Stack, Queue 
+6. Sorting, Searching 
+7. Recurisve 
+8. DFS,BFS 
+9. Greedy
