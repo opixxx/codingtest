@@ -10,3 +10,4 @@
 7. Recurisve 
 8. DFS,BFS 
 9. Greedy
+10. 
