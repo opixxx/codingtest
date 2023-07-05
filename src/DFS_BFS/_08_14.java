@@ -45,6 +45,7 @@ public class _08_14 {
                 if (city[i][j] == 2) pz.add(new Point(i, j));
             }
         }
+        len = pz.size();
         combi = new int[m];
         T.DFS(0, 0);
         System.out.println(answer);
