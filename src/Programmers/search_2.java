@@ -1,5 +1,4 @@
 package Programmers;
-
 import java.util.*;
 class search_2 {
     public int[] solution(int[] answers) {
