@@ -11,3 +11,16 @@
 8. DFS,BFS 
 9. Greedy
 10. Dynamic programming
+---
+
+-프로그래머스 고득점 kit 문제
+1. Hash
+2. Stack/Queue
+3. Heap
+4. Sorting
+5. Searching
+6. Greedy
+7. DFS/BFS
+8. BinarySearching
+9. Graph
+
