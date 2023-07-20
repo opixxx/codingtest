@@ -13,7 +13,7 @@
 10. Dynamic programming
 ---
 
--프로그래머스 고득점 kit 문제
+- 프로그래머스 고득점 kit 문제
 1. Hash
 2. Stack/Queue
 3. Heap
