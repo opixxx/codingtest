@@ -34,12 +34,6 @@ public class _10_04 {
             answer = Math.max(answer, dy[i]);
         }
         return answer;
-
-
-
-
-
-
     }
 
     public static void main(String[] args) {
