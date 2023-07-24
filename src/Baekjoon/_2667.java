@@ -51,7 +51,7 @@ public class _2667 {
                 board[i][j] = str.charAt(j) - '0';
             }
         }
-      
+
         T.solution(board);
         Collections.sort(arr);
         System.out.println(arr.size());
