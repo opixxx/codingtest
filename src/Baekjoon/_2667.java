@@ -45,17 +45,13 @@ public class _2667 {
         n = sc.nextInt();
         board = new int[n][n];
 
-        /*for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             String str = sc.next();
             for (int j = 0; j < n; j++) {
                 board[i][j] = str.charAt(j) - '0';
             }
-        }*/
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                board[i][j] = sc.nextInt();
-            }
         }
+      
         T.solution(board);
         Collections.sort(arr);
         System.out.println(arr.size());
