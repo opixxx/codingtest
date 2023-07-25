@@ -9,7 +9,7 @@ public class _1759v2 {
     static char[] str;
     static char[] pwd;
     static int[] ch;
-    public void combi(int C, int L) { // C -> 6개 중 L -> 4개 뽑는
+    public void combi(int C, int L) {
         if(C == l) {
             if(Check(pwd)) {
                 for(char result : pwd) {
