@@ -50,4 +50,3 @@ public class _14503 {
             System.out.println(answer + 1);
     }
 }
-
