@@ -37,7 +37,7 @@ public class _9019 {
                 }
                 if (i == 1) {
                     int next_result = tmp.result - 1;
-                    if (next_result == 0) next_result = 9999;
+                    if (tmp.result == 0) next_result = 9999;
                     if (!ch[next_result]) {
                         String next_command = tmp.command + 'S';
                         ch[next_result] = true;
