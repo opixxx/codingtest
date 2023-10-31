@@ -1,7 +1,6 @@
 package SWEA;
 
 import java.util.Scanner;
-import java.util.Stack;
 
 public class _1859 {
     public static void main(String[] args) {
