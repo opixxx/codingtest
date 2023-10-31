@@ -15,6 +15,7 @@ class DFSBFS_3v2 {
         Queue<Point> q = new LinkedList<>();
         q.offer(new Point(x, y));
         maps[0][0] = 0;
+
         while(!q.isEmpty()) {
             Point tmp = q.poll();
             for(int i = 0; i < 4; i++) {

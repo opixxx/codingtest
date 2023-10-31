@@ -22,7 +22,7 @@ public class _01_04 {
             answer.add(tmp);
         }
         return answer;
-       /* for (String x : str) {
+       /* \for (String x : str) {
             String tmp = new StringBuilder(x).reverse().toString();
             answer.add(tmp);
 
