@@ -10,6 +10,7 @@ public class _5215 {
 
         int test = sc.nextInt();
         for (int t = 1; t <= test; t++) {
+            result = 0;
             n = sc.nextInt(); // 맛 갯수
             limit = sc.nextInt(); // 제한 칼로리
             score = new int[n];
