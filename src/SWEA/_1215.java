@@ -1,55 +1,52 @@
 package SWEA;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class _1215 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        for (int tc = 1; tc <= 10; tc++) {
-            int len = Integer.parseInt(br.readLine());
-            char[][] board = new char[8][8];
-            for (int i = 0; i < 8; i++) {
-                String str = br.readLine();
-                for (int j = 0; j < 8; j++) {
-                    board[i][j] = str.charAt(j);
-                }
-            }
-            int count = 0;
-            for (int i = 0; i < 8; i++) {
-                StringBuffer rowSb = new StringBuffer();
-                for (int j = 0; j < 8; j++) {
-                    rowSb.append(board[i][j]);
-                    if (rowSb.length() > len) {
-                        rowSb.delete(0, 1);
-                    }
-                    if (rowSb.length() == len && palindrome(rowSb)) {
-                        count++;
-                    }
+    static int len, count;
 
-                }
+    public static void palindrome(String input) {
+        if (input.length() == len) {
+            String tmp = new StringBuilder(input).reverse().toString();
+            if (input.equals(tmp)) {
+                count++;
             }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        for (int tc = 1; tc <= 10; tc++) {
+            count = 0;
+            len = sc.nextInt();
+            char[][] board = new char[8][8];
+
             for (int i = 0; i < 8; i++) {
-                StringBuffer colSb = new StringBuffer();
-                for (int j = 0; j < 8; j++) {
-                    colSb.append(board[j][i]);
-                    if (colSb.length() > len) {
-                        colSb.delete(0, 1);
-                    }
-                    if (colSb.length() == len && palindrome(colSb)) {
-                        count++;
+                String str = sc.next();
+                board[i] = str.toCharArray();
+            }
+
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j <= 8 - len; j++) {
+                    for (int k = j + len; k <= 8; k++) {
+                        palindrome(new String(board[i], j, k - j));
                     }
                 }
             }
+
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j <= 8 - len; j++) {
+                    for (int k = j + len; k <= 8; k++) {
+                        StringBuilder column = new StringBuilder();
+                        for (int l = j; l < k; l++) {
+                            column.append(board[l][i]);
+
+                        }
+                        palindrome(column.toString());
+                    }
+                }
+            }
+
             System.out.println("#" + tc + " " + count);
         }
-
-    }
-    public static boolean palindrome(StringBuffer sb) {
-        String str1 = sb.toString();
-        String str2 = sb.reverse().toString();
-        sb.reverse();
-        return str1.equals(str2);
     }
 }
