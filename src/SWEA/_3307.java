@@ -1,6 +1,5 @@
 package SWEA;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class _3307 {
