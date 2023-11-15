@@ -1,6 +1,5 @@
-package Baekjoon;
+package Baekjoon.DFS_BFS;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class _1987 {

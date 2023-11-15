@@ -1,4 +1,4 @@
-package Baekjoon;
+package Baekjoon.DFS_BFS;
 
 
 import java.util.ArrayList;
