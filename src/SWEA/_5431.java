@@ -1,7 +1,5 @@
 package SWEA;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class _5431 {
