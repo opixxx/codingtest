@@ -10,7 +10,7 @@
 7. Recurisve 
 8. DFS,BFS 
 9. Greedy
-10. Dynamic programming
+10. DP
 ---
 
 - 프로그래머스 고득점 kit 문제

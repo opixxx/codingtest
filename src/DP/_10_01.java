@@ -1,4 +1,4 @@
-package Dynamic;
+package DP;
 
 import java.util.Scanner;
 
