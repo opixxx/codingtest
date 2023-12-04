@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class _1620 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
 
         int n = sc.nextInt();
         int m = sc.nextInt();
@@ -22,11 +22,11 @@ public class _1620 {
             String str = sc.next();
             if (isStringNumber(str)) {
                 int index = Integer.parseInt(str);
-                answer += arr[index];
+                answer.append(arr[index]);
             } else {
-                answer += map.get(str);
+                answer.append(map.get(str));
             }
-            answer += "\n";
+            answer.append("\n");
         }
         System.out.println(answer);
     }
