@@ -14,6 +14,7 @@ public class _2468 {
     static int[] dy = {1, -1, 0, 0};
 
     public static void DFS(int height, int x, int y) {
+        check[x][y] = 1;
         Queue<Point> q = new LinkedList<>();
         q.add(new Point(x, y));
         while (!q.isEmpty()) {
