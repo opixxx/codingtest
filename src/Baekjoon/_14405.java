@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class _14405 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         String answer = "NO";
         String input = sc.next();
         int check = 0;
@@ -43,8 +44,20 @@ public class _14405 {
         if (check == input.length()) {
             answer = "YES";
         }
-
         System.out.println(answer);
-
     }
 }
+//        Scanner sc = new Scanner(System.in);
+//        String input = sc.next();
+//
+//        String regex = "pi|ka|chu";
+//
+//        input = input.replaceAll(regex, "");
+//
+//        if (input.equals("")) {
+//            System.out.println("YES");
+//        } else {
+//            System.out.println("NO");
+//        }
+//
+//    }
