@@ -11,7 +11,7 @@ public class _10866 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        Deque<Integer> dq = new ArrayDeque<Integer>();
+        Deque<Integer> dq = new ArrayDeque<>();
         StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine());
