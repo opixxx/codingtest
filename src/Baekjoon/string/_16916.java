@@ -40,7 +40,6 @@ public class _16916 {
         return true;
     }
 
-
     private static long getHash(String input) {
         long hash = 0;
 
