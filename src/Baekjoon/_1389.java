@@ -47,7 +47,6 @@ public class _1389 {
             }
         }
 
-
         int result = Integer.MAX_VALUE;
         int answer = 0;
 
