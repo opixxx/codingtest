@@ -28,6 +28,7 @@ public class _15666 {
         Arrays.sort(arr);
         dfs(0, 0);
 
+
     }
 
     private static void dfs(int start, int level) {
