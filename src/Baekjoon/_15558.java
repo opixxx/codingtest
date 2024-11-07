@@ -12,8 +12,7 @@ public class _15558 {
     static int[][] arr;
     static int[][] ch;
     static int n, k;
-
-
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
