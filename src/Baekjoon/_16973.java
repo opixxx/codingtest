@@ -14,6 +14,8 @@ public class _16973 {
     static int n, m, h, w, targetX, targetY;
     static Queue<Node> q = new ArrayDeque<>();
     static int[][] map;
+    static int[][] sum;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -21,6 +23,7 @@ public class _16973 {
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
 
+        sum = new int[n + 1][m + 1];
         map = new int[n + 1][m + 1];
         ch = new boolean[n + 1][m + 1];
 
@@ -28,6 +31,11 @@ public class _16973 {
             st = new StringTokenizer(br.readLine());
             for (int j = 1; j <= m; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                sum[i][j] = sum[i][j - 1] + sum[i - 1][j] - sum[i - 1][j - 1] + map[i][j];
             }
         }
 
@@ -71,14 +79,11 @@ public class _16973 {
     }
 
     private static boolean check(int nx, int ny) {
-        for (int i = nx; i < nx + h; i++) {
-            for (int j = ny; j < ny + w; j++) {
-                if (map[i][j] == 1) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        int x2 = nx + h - 1;
+        int y2 = ny + w - 1;
+
+        int count = sum[x2][y2] - sum[nx - 1][y2] - sum[x2][ny - 1] + sum[nx - 1][ny - 1];
+        return count == 0;
     }
 
     static class Node {
