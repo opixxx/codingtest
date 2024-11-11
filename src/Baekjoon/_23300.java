@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 public class _23300 {
     public static void main(String[] args) throws IOException {
@@ -53,8 +54,13 @@ public class _23300 {
                     break;
             }
         }
-
         StringBuilder sb = new StringBuilder();
+        sb.append(currentPage).append("\n");
+        sb.append(back.isEmpty() ? "-1" : back.stream().sorted((a, b) -> -1).map(String::valueOf).collect(Collectors.joining(" ")));
+        sb.append("\n");
+        sb.append(front.isEmpty() ? "-1" : front.stream().map(String::valueOf).collect(Collectors.joining(" ")));
+
+/*        StringBuilder sb = new StringBuilder();
         sb.append(currentPage).append("\n");
         if (back.isEmpty()) {
             sb.append(-1);
@@ -70,7 +76,7 @@ public class _23300 {
             while (!front.isEmpty()) {
                 sb.append(front.pollFirst()).append(" ");
             }
-        }
+        }*/
 
         System.out.println(sb);
     }
