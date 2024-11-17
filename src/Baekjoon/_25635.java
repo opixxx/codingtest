@@ -28,7 +28,7 @@ public class _25635 {
         } else if (sum < arr[n - 1]) {
             System.out.println(sum * 2 + 1);
         } else {
-            System.out.println(sum + arr[n - 1]);
+            System.out.println(sum * 2);
         }
 
 
