@@ -38,9 +38,5 @@ public class _23843 {
             answer = Math.max(answer, pq.poll());
         }
         System.out.println(answer);
-
-
-
-
     }
 }
