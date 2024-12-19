@@ -46,13 +46,6 @@ public class _2109 {
         }
         System.out.println(answer);
 
-
-
-
-
-
-
-
     }
 
     static class Speech {
