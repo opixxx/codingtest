@@ -56,9 +56,9 @@ public class _1461 {
         int answer = 0;
         for (int i = 0; i < result.size(); i++) {
             if (i == result.size() - 1) {
-                answer = answer + result.get(i);
+                answer += result.get(i);
             } else {
-                answer = answer + (result.get(i) * 2);
+                answer += (result.get(i) * 2);
             }
         }
 
