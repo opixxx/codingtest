@@ -24,6 +24,9 @@ public class _1106v2 {
 	}
 
 	private static int bfs() {
+		if (n == 1) {
+			return 0;
+		}
 		Queue<Pair> q = new ArrayDeque<>();
 		boolean[] ch = new boolean[n];
 
@@ -53,12 +56,12 @@ public class _1106v2 {
 
 	static class Pair {
 		int i;
+		int jump;
 
 		public Pair(int i, int jump) {
 			this.i = i;
 			this.jump = jump;
 		}
 
-		int jump;
 	}
 }
