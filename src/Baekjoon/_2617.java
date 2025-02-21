@@ -17,17 +17,14 @@ public class _2617 {
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 
-		int[][] floyd1 = new int[n + 1][n + 1];
-		int[][] floyd2 = new int[n + 1][n + 1];
+		int[][] floyd = new int[n + 1][n + 1];
 
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= n; j++) {
 				if (i == j) {
-					floyd1[i][j] = 0;
-					floyd2[i][j] = 0;
+					floyd[i][j] = 0;
 				} else {
-					floyd1[i][j] = MAX;
-					floyd2[i][j] = MAX;
+					floyd[i][j] = MAX;
 				}
 			}
 		}
@@ -37,34 +34,39 @@ public class _2617 {
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
 
-			floyd1[a][b] = 1;
-			floyd2[b][a] = 1;
+			floyd[a][b] = 1;
 		}
 
 		for (int k = 1; k <= n; k++) {
 			for (int i = 1; i <= n; i++) {
 				for (int j = 1; j <= n; j++) {
-					floyd1[i][j] = Math.min(floyd1[i][j], floyd1[i][k] + floyd1[k][j]);
-					floyd2[i][j] = Math.min(floyd2[i][j], floyd2[i][k] + floyd2[k][j]);
+					floyd[i][j] = Math.min(floyd[i][j], floyd[i][k] + floyd[k][j]);
 				}
 			}
 		}
 
 
-		getAnswer(n, floyd1);
-		getAnswer(n, floyd2);
+		getAnswer(n, floyd);
 		System.out.println(set.size());
 	}
 
-	private static void getAnswer(int n, int[][] floyd1) {
+	private static void getAnswer(int n, int[][] floyd) {
 		for (int i = 1; i <= n; i++) {
-			int count = 0;
+			int count1 = 0;
+			int count2 = 0;
 			for (int j = 1; j <= n; j++) {
-				if (floyd1[i][j] > 0 && floyd1[i][j] < MAX) {
-					count++;
+				if (floyd[i][j] > 0 && floyd[i][j] < MAX) {
+					count1++;
+				}
+
+				if (floyd[j][i] > 0 && floyd[j][i] < MAX) {
+					count2++;
 				}
 			}
-			if (count > n / 2) {
+			if (count1 > n / 2) {
+				set.add(i);
+			}
+			if (count2 > n / 2) {
 				set.add(i);
 			}
 		}
