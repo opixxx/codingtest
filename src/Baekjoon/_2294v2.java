@@ -18,7 +18,7 @@ public class _2294v2 {
 		}
 
 		int[] dp = new int[k + 1];
-		Arrays.fill(dp, 100001);
+		Arrays.fill(dp, 10001);
 
 		dp[0] = 0;
 
