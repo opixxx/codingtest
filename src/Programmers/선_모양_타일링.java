@@ -11,11 +11,11 @@ public class 선_모양_타일링 {
 		dp[0] = 1;
 		dp[1] = 1;
 
-		for (int i = 2; i<= t; i++) {
-			if(i % 2 == 0 && tops[(i - 2) / 2] == 1) {
-				dp[i] = (dp[i-1] * 2 + dp[i-2]) % MOD;
+		for (int i = 2; i <= t; i++) {
+			if (i % 2 == 0 && tops[(i - 2) / 2] == 1) {
+				dp[i] = (dp[i - 1] * 2 + dp[i - 2]) % MOD;
 			} else {
-				dp[i] = (dp[i-1] + dp[i-2]) % MOD;
+				dp[i] = (dp[i - 1] + dp[i - 2]) % MOD;
 			}
 		}
 
@@ -24,3 +24,4 @@ public class 선_모양_타일링 {
 		return answer;
 	}
 }
+
