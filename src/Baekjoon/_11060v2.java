@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class _1106v2 {
+public class _11060v2 {
 	static int[] a;
 	static int n;
 	public static void main(String[] args) throws IOException {
