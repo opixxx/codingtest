@@ -8,7 +8,7 @@ public class _9658 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		int[] dp = new int[n + 1];
+		int[] dp = new int[1001];
 
 		dp[1] = 1; //창영 승
 		dp[2] = 0; //상근 승
