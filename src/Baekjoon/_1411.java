@@ -1,7 +1,10 @@
 package Baekjoon;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 public class _1411 {
 	public static void main(String[] args) throws IOException {
@@ -9,36 +12,37 @@ public class _1411 {
 
 		int n = Integer.parseInt(br.readLine());
 
-		List<String> list = new ArrayList<>();
+		String[] words = new String[n];
 
 		for (int i = 0; i < n; i++) {
-			list.add(br.readLine());
+			words[i] = br.readLine();
 		}
 
-		list.sort(Comparator.comparingInt(a -> -a.length()));
-		System.out.print(solution(list));
-	}
-
-	private static int solution(List<String> list) {
-		List<String> tmp = new ArrayList<>();
-
-		tmp.add(list.get(0));
-
-		for (int i = 1; i < list.size(); i++) {
-			String a = list.get(i); //비교 문자열
-			boolean flag = true; //비교 문자열이 tmp의 들어가있는 문자들의 접두어가 되는지 안되는지
-
-			for (String b : tmp) {
-				String c = b.substring(0, a.length());
-				if (c.equals(a)) {
-					flag = false;
+		int answer = 0;
+		for (int i = 0; i < n; i++) {
+			for (int j = i + 1; j < n; j++) {
+				if (solution(words[i]).equals(solution(words[j]))) {
+					answer++;
 				}
 			}
-
-			if (flag) {
-				tmp.add(a);
-			}
 		}
-		return tmp.size();
+
+		System.out.println(answer);
+	}
+
+	static String solution(String word) {
+		Map<Character, Integer> map = new HashMap<>();
+		StringBuilder sb = new StringBuilder();
+
+		int idx = 0;
+
+		for (char c : word.toCharArray()) {
+			if (!map.containsKey(c)) {
+				map.put(c, idx++);
+			}
+			sb.append(map.get(c));
+		}
+
+		return sb.toString();
 	}
 }
