@@ -5,14 +5,17 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class _1497 {
+	static int N, M, minGuitarCount = Integer.MAX_VALUE;
+	static int max = 0;
+	static long[] mask;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
 
-		long[] mask = new long[N];
+		mask = new long[N];
 
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
@@ -27,37 +30,32 @@ public class _1497 {
 			}
 			mask[i] = bit;
 		}
-
-		int bestSongCnt = 0;
-		int bestGuitarCnt = Integer.MAX_VALUE;
-
-		for (int subset = 1; subset < (1 << N); subset++) {
-			long songs = 0L;
-			int guitarCnt = 0;
-
-			for (int i = 0; i < N; i++) {
-				if ((subset & (1 << i)) != 0) {
-					songs |= mask[i];
-					guitarCnt++;
-				}
-			}
-
-			int songCnt = popCount(songs);
-
-			if (songCnt > bestSongCnt) {
-				bestSongCnt = songCnt;
-				bestGuitarCnt = guitarCnt;
-			} else if (songCnt == bestSongCnt && songCnt > 0) {
-				bestGuitarCnt = Math.min(bestGuitarCnt, guitarCnt);
-			}
+		solution(0, 0L, 0);
+		if (minGuitarCount == 0) {
+			minGuitarCount = -1;
 		}
+		System.out.println(minGuitarCount);
 
-		// 한 곡도 못 치면 -1
-		if (bestSongCnt == 0) System.out.println(-1);
-		else System.out.println(bestGuitarCnt);
 	}
 
-	static int popCount(long x) {
-		return Long.bitCount(x);
+	static void solution(int idx, long guitarMask, int val) {
+		int bitCount = Long.bitCount(guitarMask);
+
+		if (bitCount == max && val < minGuitarCount) {
+			minGuitarCount = val;
+		}
+
+		if (bitCount > max) {
+			minGuitarCount = val;
+			max = bitCount;
+		}
+
+		if (bitCount == M || idx == N) {
+			return;
+		}
+
+		solution(idx + 1, guitarMask | mask[idx], val + 1);
+		solution(idx + 1, guitarMask, val);
+
 	}
 }
